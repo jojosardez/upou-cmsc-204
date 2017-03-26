@@ -37,8 +37,6 @@ namespace SardezExer2
         [STAThread]
         private static void Main()
         {
-            //Test();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap();
@@ -54,64 +52,6 @@ namespace SardezExer2
             Container.Instance.RegisterType<MyBST<int>>();
             Container.Instance.RegisterType<InputBox>();
             Container.Instance.RegisterType<MainForm>();
-        }
-
-        private static void Test()
-        {
-            Logger log = new Logger();
-            log.OnMessageLogged += Log_OnMessageLogged;
-            MyBST<int> tree = new MyBST<int>(log);
-            tree.Insert(5);
-            tree.Insert(2);
-            tree.Insert(3);
-            tree.Insert(1);
-            tree.Insert(7);
-            tree.Insert(6);
-            tree.Insert(10);
-            tree.Remove(5);
-            tree.Insert(8);
-            tree.Insert(4);
-            tree.Remove(7);
-            tree.Remove(2);
-            tree.Remove(6);
-            tree.Remove(8);
-            tree.Insert(20);
-            tree.Insert(15);
-            tree.Insert(25);
-            tree.Insert(30);
-            tree.Insert(13);
-            tree.Insert(17);
-            tree.Insert(12);
-            tree.Insert(14);
-            tree.Insert(16);
-            tree.Remove(20);
-            tree.Remove(10);
-            tree.Remove(15);
-            tree.Remove(4);
-            tree.Insert(7);
-            tree.Insert(5);
-            tree.Insert(9);
-            tree.Remove(3);
-            tree.Remove(12);
-            tree.Insert(27);
-            tree.Insert(28);
-            tree.Remove(25);
-            tree.Insert(31);
-            tree.Remove(27);
-            tree.Insert(6);
-            tree.Remove(5);
-            tree.Remove(6);
-            tree.Remove(9);
-            tree.Insert(11);
-            tree.Insert(12);
-            tree.Insert(8);
-            tree.Insert(9);
-            tree.Remove(7);
-        }
-
-        private static void Log_OnMessageLogged(string message)
-        {
-           Debug.WriteLine(message);
         }
     }
 }
